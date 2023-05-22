@@ -35,7 +35,7 @@ public class Inicio extends HttpServlet {
                 case "edit":
                     id = Integer.parseInt(request.getParameter("id"));
                     seminario = dao.getById(id);
-                    request.setAttribute("aviso", seminario);
+                    request.setAttribute("seminario", seminario);
                     request.getRequestDispatcher("frmseminario.jsp").forward(request, response);
                     break;
 
@@ -85,15 +85,19 @@ public class Inicio extends HttpServlet {
             seminario.setFecha(fecha);
             seminario.setHora(hora);
             seminario.setCupo(cupo);
+            
+            
+            System.out.println("Objeto seminario" + seminario.toString());
 
             if (id == 0) {
                 dao.insert(seminario);
+                
             } else {
                 dao.update(seminario);
             }
 
         } catch (Exception e) {
-            System.out.println("ERROR AL GUARDAR datos..." + e.getMessage());
+            System.out.println("ERROR AL GUARDAR datos... doPost()" + e.getMessage());
         }
 
         response.sendRedirect("Inicio");

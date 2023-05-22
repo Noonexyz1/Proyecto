@@ -17,7 +17,7 @@
                 Nuevo Registro
             </c:if>
 
-            <c:if test="${seminario.id != 0}">
+                <c:if test="${seminario.id != 0}">
                 Editar Registro
             </c:if>
 
@@ -33,19 +33,19 @@
                 </tr>
                 <tr>
                     <td>Expositor:</td>
-                    <td><input type="text" name="titulo" value="${seminario.expositor}"></td>
+                    <td><input type="text" name="expositor" value="${seminario.expositor}"></td>
                 </tr>
                 <tr>
                     <td>Fecha:</td>
-                    <td><input type="text" name="titulo" value="${seminario.fecha}"></td>
+                    <td><input type="text" name="fecha" value="${seminario.fecha}"></td>
                 </tr>
                 <tr>
                     <td>Hora:</td>
-                    <td><input type="text" name="titulo" value="${seminario.hora}"></td>
+                    <td><input type="text" name="hora" value="${seminario.hora}"></td>
                 </tr>
                 <tr>
                     <td>Cupo:</td>
-                    <td><input type="number" name="titulo" value="${seminario.cupo}"></td>
+                    <td><input type="number" name="cupo" value="${seminario.cupo}"></td>
                 </tr>
 
                 
